@@ -1,6 +1,7 @@
-import { View, Text, FlatList, TouchableOpacity, ImageBackground, Image } from 'react-native';
+import { useRef, useState } from 'react'
+import { ResizeMode, Video } from 'expo-av';
 import * as Animatable from 'react-native-animatable';
-import React, { useState } from 'react'
+import { FlatList, TouchableOpacity, ImageBackground, Image } from 'react-native';
 import { icons } from '../constants';
 
 const zoomIn = {
@@ -8,13 +9,13 @@ const zoomIn = {
     scale: 0.9
   },
   1: {
-    scale: 1.1
+    scale: 1
   }
 }
 
 const zoomOut = {
   0: {
-    scale: 1.1
+    scale: 1
   },
   1: {
     scale: 0.9
@@ -22,7 +23,6 @@ const zoomOut = {
 }
 
 const TrendingItem = ({ activeItem, item }) => {
-
   const [play, setPlay] = useState(false);
 
   return(
@@ -32,12 +32,23 @@ const TrendingItem = ({ activeItem, item }) => {
       duration={500}
     >
       {play ? (
-        <Text className='text-white'>Playing</Text>
+        <Video
+        source={{ uri: item.video + '.mp4' }}
+        className="w-52 h-72 rounded-[33px] mt-3 bg-white/10"
+        resizeMode={ResizeMode.CONTAIN}
+        useNativeControls
+        shouldPlay
+        onPlaybackStatusUpdate={(status) => {
+          if (status.didJustFinish) {
+            setPlay(false);
+          }
+        }}
+      />
       ) : (
         <TouchableOpacity 
           className='relative justify-center items-center'
           activeOpacity={0.7}
-          onPress={() => setPlay(true)}
+          onPress={() => {setPlay(true)}}
         >
           <ImageBackground 
             source={{ uri: item.thumbnail }}
