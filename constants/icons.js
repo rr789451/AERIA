@@ -11,6 +11,7 @@ import logout from "../assets/icons/logout.png";
 import eyeHide from "../assets/icons/eye-hide.png";
 import eye from "../assets/icons/eye.png";
 import play from "../assets/icons/play.png";
+import solid from "../assets/icons/solid.png";
 
 export default {
   play,
@@ -20,6 +21,7 @@ export default {
   profile,
   leftArrow,
   menu,
+  solid,
   search,
   upload,
   rightArrow,
