@@ -6,8 +6,7 @@ import { ResizeMode, Video } from 'expo-av';
 const VideoCard = ({ video:{ title, thumbnail, video, creator: { username, avatar } } }) => {
 
   const [play, setPlay] = useState(false);
-  const [buttonPressed, setButtonPressed] = useState(false);
-  
+
   return (
     <View className='flex-col items-center px-4 mb-14' >
         <View className='flex-row gap-3 items-start'>
@@ -29,14 +28,8 @@ const VideoCard = ({ video:{ title, thumbnail, video, creator: { username, avata
                     </Text>
                 </View>
             </View>
-            <TouchableOpacity className='pt-2' onPress={() => setButtonPressed(!buttonPressed)}>
+            <TouchableOpacity className='pt-2'>
                 {
-                    buttonPressed ?
-                    <Image 
-                        source={icons.solid}
-                        className='w-5 h-5'
-                        resizeMode='contain'
-                    /> : 
                     <Image 
                         source={icons.menu}
                         className='w-5 h-5'
