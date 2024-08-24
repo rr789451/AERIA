@@ -50,7 +50,7 @@ const SignIn = () => {
             resizeMode='contain'
           />
 
-          <Text className="text-2xl text-white text-semibold mt-10 font-psemibold">Sign in to Aora</Text>
+          <Text className="text-2xl text-white text-semibold mt-10 font-psemibold">Sign in to Aeria</Text>
 
           <FormFeild 
             title="Email"

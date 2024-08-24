@@ -51,7 +51,7 @@ const SignUp = () => {
             resizeMode='contain'
           />
 
-          <Text className="text-2xl text-white text-semibold mt-10 font-psemibold">Sign up to Aora</Text>
+          <Text className="text-2xl text-white text-semibold mt-10 font-psemibold">Sign up to Aeria</Text>
 
           <FormFeild 
             title="Username"
