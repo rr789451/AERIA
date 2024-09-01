@@ -53,7 +53,7 @@ To get started with the Aeria frontend, follow these steps:
     
 ## Project Structure
 
-The project follows a common Node.js project structure:
+The project follows a common Expo project structure:
 
 - **app/index.jsx**: Entry point to the app with an onboarding screen.
 
